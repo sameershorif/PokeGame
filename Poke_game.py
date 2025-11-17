@@ -41,12 +41,14 @@ print('Ability: {}'.format(ability['name']))
 
 
 ######### Random Pokemon assigned to CPU
+print("\nThe CPU is choosing a Pokémon...")
 
-random_id = random.randint(0, len(pokemon_list) - 1)
+random_id = random.randint(1, 386)
 
-random_poke_url = f'https://pokeapi.co/api/v2/pokemon/{random_id}/'
+cpu_url = f'https://pokeapi.co/api/v2/pokemon/{random_id}/'
+cpu_response = requests.get(cpu_url)
+cpu_pokemon_data = json.loads(cpu_response.text)
+cpu_name = cpu_pokemon_data['name']
 
-response = requests.get(random_poke_url)
-pokemon_data = json.loads(response.text)
-
-print(pokemon_data['name'])
+print(cpu_pokemon_data['name'])
+print(f"CPU Pokémon: {cpu_name}")
