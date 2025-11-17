@@ -53,4 +53,16 @@ cpu_name = cpu_pokemon_data['name']
 print(cpu_pokemon_data['name'])
 print(f"CPU Pokémon: {cpu_name}")
 
+##### Battle
+
+# to get ability
+cpu_abilities = cpu_pokemon_data['abilities'][0]
+cpu_ability = cpu_abilities['ability']
+
+# to format height and weight properly
+cpu_height = int(cpu_pokemon_data['height'])
+
+cpu_height_formatted = cpu_height / 10
+
+print('CPU Height: {}'.format(cpu_height_formatted) + "(m)")
 
