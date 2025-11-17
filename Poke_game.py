@@ -1,5 +1,6 @@
 import requests
 import json
+import random
 
 # Get the list of pokemon from the API
 url = 'https://pokeapi.co/api/v2/pokemon/'
@@ -38,3 +39,14 @@ print('Weight: {}'.format(weight_formatted) + "(kgs)")
 print('Height: {}'.format(height_formatted) + "(m)")
 print('Ability: {}'.format(ability['name']))
 
+
+######### Random Pokemon assigned to CPU
+
+random_id = random.randint(0, len(pokemon_list) - 1)
+
+random_poke_url = f'https://pokeapi.co/api/v2/pokemon/{random_id}/'
+
+response = requests.get(random_poke_url)
+pokemon_data = json.loads(response.text)
+
+print(pokemon_data['name'])
