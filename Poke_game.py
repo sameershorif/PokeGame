@@ -6,6 +6,7 @@ url = 'https://pokeapi.co/api/v2/pokemon/'
 response = requests.get(url)
 pokemon_list = json.loads(response.text)['results']
 
+print("Here are some Pokémon you can choose from:\n")
 for pokemon in pokemon_list:
     print(pokemon['name'])
 
