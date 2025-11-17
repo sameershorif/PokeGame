@@ -12,7 +12,7 @@ for pokemon in pokemon_list:
     print(pokemon['name'])
 
 # Ask the user to choose a pokemon
-print('Enter your pokemon:')
+print('\nEnter your pokemon:')
 
 # Get the user's choice
 choice = input().lower()
@@ -64,5 +64,30 @@ cpu_height = int(cpu_pokemon_data['height'])
 
 cpu_height_formatted = cpu_height / 10
 
-print('CPU Height: {}'.format(cpu_height_formatted) + "(m)")
+cpu_weight = int(cpu_pokemon_data['weight'])
+cpu_weight_formatted = cpu_weight / 10
+
+#these probably don't need to be printed until the user selects which stat to compare
+#print('CPU Weight: {}'.format(cpu_weight_formatted) + "(kgs)")
+#print('CPU Height: {}'.format(cpu_height_formatted) + "(m)")
+
+
+#### User input of which stat they are wanting to compare
+print('\nHeight [H], Weight [W]')
+
+stat_compare = input("What stat are you wanting to compare?: 'H' or 'W' ").lower()
+
+if stat_compare == 'h':
+    print(f"\nYour Pokemons height is: {float(height_formatted)} (m) \nThe CPU's Pokemon height is {float(cpu_height_formatted)} (m)")
+    if height > cpu_height:
+        print("\nYou Win, \nyour pokemon is taller")
+    elif height_formatted < cpu_height_formatted:
+        print("\nYou Lose, \nyour pokemon is smaller")
+
+if stat_compare == 'w':
+    print(f"\nYour Pokemons weight is: {float(weight_formatted)} (kg) \nThe CPU's Pokemon weight is {float(cpu_weight_formatted)} (kg)")
+    if weight_formatted > cpu_weight_formatted:
+        print("\nYou Win, \n Your pokemon is heavier than the cpu's")
+    elif weight_formatted < cpu_weight_formatted:
+        print("\nYou Lose ,\n Your pokemon is lighter weight than the cpu's Pokemon weight")
 
