@@ -61,11 +61,11 @@ cpu_ability = cpu_abilities['ability']
 
 # to format height and weight properly
 cpu_height = int(cpu_pokemon_data['height'])
-
 cpu_height_formatted = cpu_height / 10
 
 cpu_weight = int(cpu_pokemon_data['weight'])
 cpu_weight_formatted = cpu_weight / 10
+
 
 #these probably don't need to be printed until the user selects which stat to compare
 #print('CPU Weight: {}'.format(cpu_weight_formatted) + "(kgs)")
